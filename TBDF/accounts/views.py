@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import request
+from django.http import request, HttpResponse
 
 from django.contrib import messages
 
@@ -7,10 +7,11 @@ from django.contrib import messages
 
 
 from accounts.models import Teacher
-from courses.models import Student
+from courses.models import Student, QuizSent
 
 from accounts.forms import UserRegisterForm, TeacherRegisterForm
 from courses.forms import QuizRegisterForm
+
 
 
 def home(request):
@@ -47,6 +48,10 @@ def QuizSignup(request):
     if request.method == 'POST':
         Quizform = QuizRegisterForm(
             request.POST, request.FILES)
+
+
+        #send_sms() yet to be implemented
+        return HttpResponse('Quiz Sent!')
     else:
         quizform = QuizRegisterForm()
         context = {'form': quizform}

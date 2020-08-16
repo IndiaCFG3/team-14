@@ -19,10 +19,11 @@ def get_no():
     return results
 
 
-def send_sms():
+def send_sms(message):
     # Your Account Sid and Auth Token from twilio.com / console
     account_sid = 'AC47d3b372588f0f8b935c43f7b18ca306'
     auth_token = 'ffd2cbddbe938fcbcc64843f7fe60862'
+
 
     client = Client(account_sid, auth_token)
 
@@ -39,7 +40,7 @@ def send_sms():
     for x in mobile_no:
         message = client.messages.create(
             from_='+16039414130',
-            body='body',
+            body=message,
             to=str(x)
         )
         print(message.sid)
