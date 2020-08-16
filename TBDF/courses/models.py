@@ -8,6 +8,12 @@ class Course(models.Model):
     course_id = models.IntegerField(verbose_name="Course ID")
     name = models.TextField(verbose_name="Course Name")
 
+#Student information
+class Student(models.Model):
+    student_id = models.IntegerField(verbose_name="Student ID")
+    name = models.CharField(max_length=150, verbose_name="Student Name")
+    whatsapp = models.BooleanField(verbose_name="Whatsapp Availability")
+    mobile = models.BigIntegerField(null=True,blank=True,verbose_name="Mobile Number")
 
 #Message Sending
 class MessageSender(models.Model):
