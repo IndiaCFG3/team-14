@@ -38,3 +38,9 @@ def TeacherSignup(request):
         teacherform = TeacherRegisterForm()
         context = {'form': userform, 'tform': teacherform}
         return render(request, 'TeacherSignup.html', context)
+
+
+
+def DashBoard(request):
+
+    return render(request,"dashboard.html")
