@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Teacher Signup</title>
+    <title>Quiz Creation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,8 +14,6 @@
 {% load crispy_forms_tags %}
 
 
-
-
 <div class='container'>
       <div class=' pl-4'>
         <form class='form-group' method='POST' enctype="multipart/form-data">
@@ -23,13 +21,10 @@
           <div class='container mt-3 pd-3'>
               <fieldset class='form-group border p-3 m-3'>
                   <legend>
-                      <h3>Teacher's Registration form</h3>
+                      <h3>Create a Quiz!</h3>
                   </legend>
                   <div class="form-group">
                     {{form | crispy}}
-                  </div>
-                  <div class="form-group">
-                    {{tform | crispy}}
                   </div>
                   <br>
                   <div class='row'>
@@ -46,14 +41,8 @@
                   </div>
          </fieldset>
         </form>
-        <div class='border-top pt-2'>
-          <small class='text-muted'>
-            Already having an account? <a href='{% url "Login" %}' class='ml-3'>Login In</a>
-          </small>
-      </div>
-      </div>
+    </div>
 </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

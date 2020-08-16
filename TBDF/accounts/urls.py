@@ -25,6 +25,11 @@ urlpatterns = [
     path('signup', views.TeacherSignup, name='teacherssignup'),
     path('Login/',auth_views.LoginView.as_view(template_name='login.html'),name='Login'),
     path('Logout',auth_views.LogoutView.as_view(),name='Logout'),
+<<<<<<< HEAD
     path('dashboard/',views.DashBoard,name='dashboard')
     
+=======
+    path('dashboard/',views.DashBoard,name='DashBoard'),
+    path('quiz/', views.QuizSignup, name="Quiz")
+>>>>>>> b1aca1353a69a68dfe473282a5cb9291a20fd27f
 ]

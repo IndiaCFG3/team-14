@@ -1,4 +1,4 @@
-rom django import forms
+from django import forms
 from courses.models import QuizSent
 
 class QuizRegisterForm(forms.ModelForm):
