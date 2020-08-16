@@ -1,12 +1,9 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 from django.http import request
 
 from django.contrib import messages
 
 # Create your views here.
-
-
-from courses.models import Student
 
 
 from accounts.forms import UserRegisterForm, TeacherRegisterForm
@@ -43,22 +40,21 @@ def TeacherSignup(request):
 
 def QuizSignup(request):
     if request.method == 'POST':
-        Quizform = QuizRegisterForm(request.POST, request.FILES)
-        Quizform.save()
-        return redirect('home')
+        Quizform = QuizRegisterForm(
+            request.POST, request.FILES)
     else:
         quizform = QuizRegisterForm()
         context = {'form': quizform}
         return render(request, 'Quiz.html', context)
 
 def DashBoard(request):
-
-    student_withwhatspp = Student.objects.all().filter(whatsapp=True)
-    student_withoutwhatsapp = Student.objects.all().filter(whatsapp=False)
-
     return render(request,"dashboard.html")
 
 
 def chatbot(request):
 
     return HttpResponse("hello")
+
+
+def SendSms(request):
+    return render(request, "send_sms.html")

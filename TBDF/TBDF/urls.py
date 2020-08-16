@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('accounts.urls')),
     path('sms/', include('tsms.urls')),
-    path('',include('webhook.urls'))
+    path('',include('webhook.urls')),
+    path('res/',include('receive_msg.urls'))
 ]

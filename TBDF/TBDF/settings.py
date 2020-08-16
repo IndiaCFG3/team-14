@@ -58,7 +58,7 @@ ROOT_URLCONF = 'TBDF.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join('accounts/templates'),os.path.join('courses/templates'),os.path.join('tsms/templates')],
+        'DIRS': [os.path.join('accounts/templates'),os.path.join('courses/templates'),os.path.join('tsms/templates'),os.path.join('receive_msg/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
