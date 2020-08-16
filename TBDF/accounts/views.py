@@ -7,8 +7,7 @@ from django.contrib import messages
 
 
 from accounts.forms import UserRegisterForm, TeacherRegisterForm
-
-
+from courses.forms import QuizRegisterForm
 
 def home(request):
 
@@ -39,7 +38,14 @@ def TeacherSignup(request):
         context = {'form': userform, 'tform': teacherform}
         return render(request, 'TeacherSignup.html', context)
 
-
+def QuizSignup(request):
+    if request.method == 'POST':
+        Quizform = QuizRegisterForm(
+            request.POST, request.FILES)
+    else:
+        quizform = QuizRegisterForm()
+        context = {'form': quizform}
+        return render(request, 'Quiz.html', context)
 
 def DashBoard(request):
 
