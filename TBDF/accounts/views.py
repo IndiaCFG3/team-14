@@ -48,7 +48,8 @@ def QuizSignup(request):
         return render(request, 'Quiz.html', context)
 
 def DashBoard(request):
-    return render(request,"dashboard.html")
+
+    return render(request,'dashBoard.html')
 
 
 def chatbot(request):
