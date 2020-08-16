@@ -12,7 +12,7 @@ from courses.models import Student, QuizSent
 from accounts.forms import UserRegisterForm, TeacherRegisterForm
 from courses.forms import QuizRegisterForm
 
-from twillio_send import send_sms
+from accounts.twillio_send import send_sms
 
 
 

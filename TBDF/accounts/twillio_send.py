@@ -33,7 +33,7 @@ def send_sms(msg):
     #test
     message = client.messages.create(
         from_='+16039414130',
-        body='body',
+        body=msg,
         to='+919714948808'
     )
 
