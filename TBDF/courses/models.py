@@ -1,10 +1,10 @@
 from django.db import models
-from account.models import Teacher
+from accounts.models import Teacher
 # Create your models here.
 
 #Course information
 class Course(models.Model):
-    teacher_id = models.ForeignKey(Teacher, verbose_name="Teacher ID")
+    user_id = models.ForeignKey(Teacher, verbose_name="Teacher ID")
     course_id = models.IntegerField(verbose_name="Course ID")
     name = models.TextField(verbose_name="Course Name")
 
