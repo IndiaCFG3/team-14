@@ -6,5 +6,14 @@ from django.contrib.auth.models import User
 
 
 class Teacher(models.Model):
+<<<<<<< HEAD
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+=======
+<<<<<<< HEAD
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    phoneno=models.BigIntegerField(null=True,blank=True)
+    
+=======
+    user = models.OneToOneField(Users, on_delete=models.CASCADE, primary_key=True)
     phoneno=models.BigIntegerField(null=True,blank=True, verbose_name="Mobile Number")
+
