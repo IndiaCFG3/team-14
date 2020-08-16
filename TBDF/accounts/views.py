@@ -1,10 +1,18 @@
-from django.shortcuts import render,messages
+from django.shortcuts import render
 from django.http import request
+
+from django.contrib import messages
 
 # Create your views here.
 
 
-from accounts.forms import UserRegisterForm,TeacherRegisterForm
+from accounts.forms import UserRegisterForm, TeacherRegisterForm
+
+
+
+def home(request):
+
+    return render(request,"landing.html")
 
 
 def TeacherSignup(request):
@@ -12,7 +20,7 @@ def TeacherSignup(request):
     if request.method == 'POST':
         userform = UserRegisterForm(
             request.POST, request.FILES)
-        teacherform=TeacherRegisterForm(
+        teacherform = TeacherRegisterForm(
             request.POST, request.FILES)
         if userform.is_valid() and teacherform.is_valid():
             user = userform.save(commit=False)
@@ -29,6 +37,10 @@ def TeacherSignup(request):
         userform = UserRegisterForm()
         teacherform = TeacherRegisterForm()
         context = {'form': userform, 'tform': teacherform}
-        render(request,'TeacherSignup.html',context)
+        return render(request, 'TeacherSignup.html', context)
 
-    
+
+
+def DashBoard(request):
+
+    return render(request,"dashboard.html")

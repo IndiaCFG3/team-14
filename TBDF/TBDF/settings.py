@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,7 +39,8 @@ INSTALLED_APPS = [
     'accounts',
     'crispy_forms',
     'courses',
-    'messages',
+    'tsms'
+    
 ]
 
 MIDDLEWARE = [
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'TBDF.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join('accounts/templates')],
+        'DIRS': [os.path.join('accounts/templates'),os.path.join('courses/templates'),os.path.join('tsms/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,10 +124,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'./accounts/static')
-]
+
+
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
 

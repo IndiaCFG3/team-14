@@ -18,10 +18,13 @@ from django.urls import path
 
 from accounts import views
 
+from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     path('', views.home, name='home'),
-    path('signup', views.TeacherSignup, name='teachersignup'),
-    path('Login/',auth_views.LoginView.as_view(template_name='Login.html'),name='Login'),
+    path('signup', views.TeacherSignup, name='teacherssignup'),
+    path('Login/',auth_views.LoginView.as_view(template_name='login.html'),name='Login'),
     path('Logout',auth_views.LogoutView.as_view(),name='Logout'),
+    path('dashboard/',views.DashBoard,name='DashBoard')
     
 ]
