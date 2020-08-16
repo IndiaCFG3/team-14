@@ -24,7 +24,7 @@ class StudentMarks(models.Model):
 #Quiz Sent
 class QuizSent(models.Model):
     quiz_id = models.IntegerField(primary_key=True, verbose_name="Quiz Sent ID")
-    mobile_number = models.ForeignKey(Student,on_delete=models.CASCADE,verbose_name="Mobile Number")
+    mobile_number = models.ForeignKey(Teacher,on_delete=models.CASCADE,verbose_name="Mobile Number")
     description = models.TextField(verbose_name="Quiz Questions")
     answer_key = models.TextField(verbose_name="Answer Key")
     total_marks = models.IntegerField(verbose_name="Total Marks")
