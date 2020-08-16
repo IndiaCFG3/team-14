@@ -4,3 +4,5 @@ Team*.zip
 *.crt
 *.key
 *.ovpn
+
+/django_twi/twilio_auth.py
