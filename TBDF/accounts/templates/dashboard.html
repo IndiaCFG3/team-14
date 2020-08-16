@@ -80,15 +80,15 @@
                     <div class="w3-display-container">
                         <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
                         <div class="w3-display-bottomleft w3-container w3-text-black">
-                            <h2>{{teacher.firstname}}</h2>
+                            <h2>{{teacher.user.firstname}}</h2>
                         </div>
                     </div>
                     <div class="w3-container">
                         <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>TBDE</p>
-                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{teacher.email}}
+                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{teacher.user.email}}
                         </p>
                         <p><i
-                                class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{teacher.phonenumber}}
+                                class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{teacher.phoneno}}
                         </p>
                         <hr>
 
@@ -184,8 +184,10 @@
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script>
-            var ctx = document.querySelectorAll('myChart').getContext('2d');
-            for (let i = 0; i < 3; i++) {
+            var ctx = document.getElementsByClassName('myChart')
+            console.log(ctx);
+            let  x= [[5,8,9],[12,7,8],[12,6,3]]
+            for (let i = 0; i < ctx.length; i++) {
 
                 var myChart = new Chart(ctx[i], {
                     type: 'line',
@@ -193,7 +195,7 @@
                         labels: ['Course 1', 'Course 2', 'Course 3'],
                         datasets: [{
                             label: '# Performace of Students',
-                            data: [12, 19, 3,],
+                            data: x[i],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
