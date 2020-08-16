@@ -155,18 +155,28 @@
 	<div class="grad"></div>
 	<div class="header">
 		<div>WELCOME<span><br>TEACHERS</span></div>
-		
+
 	</div>
 	</div>
 	<br>
 	<div class="login">
-		<form method='POST'>
+		<form method="POST">
 			{% csrf_token %}
-			<div class="form-group">
-				{{form | crispy}}
-			</div>
+			<fieldset class="form-group border p-4 m-4">
+				<legend>Login Here</legend>
+				<div class="form-group">
+					{{form | crispy}}
+				</div>
+				<div class='form-group'>
+					<input type="submit" class="btn btn-info" value="Login">
+				</div>
+			</fieldset>
 		</form>
-		<input type="button" value="Login">
+		<div class='border-top p-3'>
+			<small class='text-muted'>
+				Need an account?<a href='{% url "teacherssignup" %}' class='ml-3'>Sign Up</a>
+			</small>
+		</div>
 	</div>
 </body>
 

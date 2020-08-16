@@ -5,4 +5,5 @@ Team*.zip
 *.key
 *.ovpn
 *.pyc
+TBDF*__pycache__
 

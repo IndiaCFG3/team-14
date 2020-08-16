@@ -8823,78 +8823,76 @@
 
 <body>
 
-    <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
-        <div class="container">
-            <div class="navbar-translate">
-                <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                </button>
-                <a class="navbar-brand" href="https://www.example.com">ABOUT BETTER DESIGN</a>
+    <body>
+        <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
+            <div class="container">
+                <div class="navbar-translate">
+                    <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button"
+                        data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar"></span>
+                        <span class="navbar-toggler-bar"></span>
+                        <span class="navbar-toggler-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://www.example.com">ABOUT BETTER DESIGN</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ml-auto">
+
+                        {% if not user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'Login' %}" class="btn btn-danger btn-round">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'teacherssignup' %}" class="btn btn-danger btn-round">Register</a>
+                        </li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-danger btn-round">Create
+                                Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'dashboard' %}" class="btn btn-danger btn-round">DashBoard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Logout' %}" class="btn btn-danger btn-round">Logout</a>
+                        </li>
+
+                        {% endif %}
+
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/" target="_blank">
-                            <i class="fa fa-twitter"></i>
-                            <p class="hidden-lg-up">Twitter</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/tbdf.india/" target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                            <p class="hidden-lg-up">Facebook</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/" target="_blank">
-                            <i class="fa fa-instagram"></i>
-                            <p class="hidden-lg-up">Instagram</p>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-            <a href="https://www.example.com" target="_blank" class="btn btn-danger btn-round">Login</a>
-          </li>
-                    <li class="nav-item">
-                        <a href="https://www.example.com" target="_blank" class="btn btn-danger btn-round">Register</a>
+        </nav>
+        <div class="wrapper">
+            <div class="page-header section-dark"
+                style="background-image: url('https://media.istockphoto.com/photos/day-picture-id1034861128?k=6&m=1034861128&s=612x612&w=0&h=ZFe0_YJK4wz3Naw4IqhMdWKSPpOzABK52txkIJ-dOpw=')">
+                <div class="filter"></div>
+                <div class="content-center">
+                    <div class="container">
+                        <div class="title-brand">
+                            <h1 class="presentation-title">SUGGEST A TITLE GUYS</h1>
+                            <div class="fog-low">
+                                <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
+                            </div>
+                            <div class="fog-low right">
+                                <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
+                            </div>
+                        </div>
 
-
-   
-
-                </ul>
+                        <h2 class="presentation-subtitle text-center">Any small description</h2>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="wrapper">
-        <div class="page-header section-dark" style="background-image: url('https://media.istockphoto.com/photos/day-picture-id1034861128?k=6&m=1034861128&s=612x612&w=0&h=ZFe0_YJK4wz3Naw4IqhMdWKSPpOzABK52txkIJ-dOpw=')">
-            <div class="filter"></div>
-        <div class="content-center">
-          <div class="container">
-            <div class="title-brand">
-              <h1 class="presentation-title">SUGGEST A TITLE GUYS</h1>
-              <div class="fog-low">
-                <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
-              </div>
-              <div class="fog-low right">
-                <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
-              </div>
-            </div>
+    </body>
 
-            <h2 class="presentation-subtitle text-center">Any small description</h2>
-          </div>
-        </div>
-            <div class="moving-clouds" style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png'); ">
-
-            </div>
-      </div>
-  </div>
-</body>
-
-  <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+    <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+    <script src="./script.js"></script>
 
 </body>
+
 </html>
