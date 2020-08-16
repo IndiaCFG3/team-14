@@ -45,7 +45,7 @@ def QuizSignup(request):
     if request.method == 'POST':
         Quizform = QuizRegisterForm(request.POST, request.FILES)
         Quizform.save()
-        redirect('home')
+        return redirect('home')
     else:
         quizform = QuizRegisterForm()
         context = {'form': quizform}
@@ -53,9 +53,12 @@ def QuizSignup(request):
 
 def DashBoard(request):
 
-    student_withwhatspp = Student.objects.filter(whatsapp=True)
-    student_withoutwhatsapp = Student.objects.filter(whatsapp=False)
-
-
+    student_withwhatspp = Student.objects.all().filter(whatsapp=True)
+    student_withoutwhatsapp = Student.objects.all().filter(whatsapp=False)
 
     return render(request,"dashboard.html")
+
+
+def chatbot(request):
+
+    return HttpResponse("hello")
