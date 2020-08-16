@@ -49,3 +49,12 @@ def QuizSignup(request):
 
 def DashBoard(request):
     return render(request,"dashboard.html")
+
+
+def chatbot(request):
+
+    return HttpResponse("hello")
+
+
+def SendSms(request):
+    return render(request, "send_sms.html")

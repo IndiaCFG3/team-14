@@ -19,3 +19,8 @@ class TeacherRegisterForm(forms.ModelForm):
     class Meta:
         model = Teacher
         fields = ['phoneno']
+
+
+class SendSmsForm(forms.ModelForm):
+    class Meta:
+        fields = ['description']
