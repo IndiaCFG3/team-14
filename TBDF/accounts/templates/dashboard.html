@@ -80,13 +80,13 @@
                     <div class="w3-display-container">
                         <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
                         <div class="w3-display-bottomleft w3-container w3-text-black">
-                            <h2>Teacher Name</h2>
+                            <h2>{teacher.firstname}</h2>
                         </div>
                     </div>
                     <div class="w3-container">
                         <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>TBDE</p>
-                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-                        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{teacher.email}</p>
+                        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{teacher.phonenumber}</p>
                         <hr>
 
                         <p class="w3-large"><b><i
@@ -133,31 +133,35 @@
             </div>
 
             <!-- Right Column -->
-            <div class="w3-twothird">
+                {% for student in students %}
 
-                <div class="w3-container w3-card w3-white w3-margin-bottom">
-                    <h2 class="w3-text-grey w3-padding-16"><i
-                            class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Student 1</h2>
-                    <div class="w3-container">
-                        <h5 class="w3-opacity"><b>Student Details</b></h5>
-                        <hr>
-                    </div>
-
+                <div class="w3-twothird">
+                
                     <div class="w3-container w3-card w3-white w3-margin-bottom">
                         <h2 class="w3-text-grey w3-padding-16"><i
                                 class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Student 1</h2>
                         <div class="w3-container">
-                            <h5 class="w3-opacity"><b>Student Details</b></h5>
+                            <h5 class="w3-opacity"><b>Students Details</b></h5>
                             <hr>
                         </div>
-                        <canvas id="myChart" width="400" height="250"></canvas>
-
-
+                
+                        <div class="w3-container w3-card w3-white w3-margin-bottom">
+                            <h2 class="w3-text-grey w3-padding-16"><i
+                                    class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Student 1</h2>
+                            <div class="w3-container">
+                                <h5 class="w3-opacity"><b>{student.name}</b></h5>
+                                <hr>
+                            </div>
+                            <canvas class="myChart" width="400" height="250"></canvas>
+                
+                
+                        </div>
+                
+                        <!-- End Right Column -->
                     </div>
 
-                    <!-- End Right Column -->
-                </div>
 
+                {% endif %}
                 <!-- End Grid -->
             </div>
 

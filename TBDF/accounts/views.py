@@ -6,12 +6,16 @@ from django.contrib import messages
 # Create your views here.
 
 
+from accounts.models import Teacher
+from courses.models import Student
+
 from accounts.forms import UserRegisterForm, TeacherRegisterForm
 from courses.forms import QuizRegisterForm
 
+
 def home(request):
 
-    return render(request,"landing.html")
+    return render(request, "landing.html")
 
 
 def TeacherSignup(request):
@@ -38,6 +42,7 @@ def TeacherSignup(request):
         context = {'form': userform, 'tform': teacherform}
         return render(request, 'TeacherSignup.html', context)
 
+
 def QuizSignup(request):
     if request.method == 'POST':
         Quizform = QuizRegisterForm(
@@ -47,9 +52,19 @@ def QuizSignup(request):
         context = {'form': quizform}
         return render(request, 'Quiz.html', context)
 
+
 def DashBoard(request):
 
-    return render(request,'dashBoard.html')
+    teacher = Teacher.objects.get(user=request.user)
+
+    student = Students.objects.all()
+
+    context = {
+        'teacher': teacher,
+        'students': students
+    }
+
+    return render(request, 'dashBoard.html', context=context)
 
 
 def chatbot(request):
