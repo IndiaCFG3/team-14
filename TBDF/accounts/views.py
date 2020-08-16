@@ -7,10 +7,11 @@ from django.contrib import messages
 
 
 from accounts.models import Teacher
-from courses.models import Student
+from courses.models import Student, QuizSent
 
 from accounts.forms import UserRegisterForm, TeacherRegisterForm
 from courses.forms import QuizRegisterForm
+
 
 
 def home(request):
@@ -48,7 +49,9 @@ def QuizSignup(request):
         Quizform = QuizRegisterForm(
             request.POST, request.FILES)
 
-        return HttpResponse('x')
+
+        #send_sms() yet to be implemented
+        return HttpResponse('Quiz Sent!')
     else:
         quizform = QuizRegisterForm()
         context = {'form': quizform}
