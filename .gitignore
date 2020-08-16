@@ -4,4 +4,5 @@ Team*.zip
 *.crt
 *.key
 *.ovpn
+*.pyc
 
