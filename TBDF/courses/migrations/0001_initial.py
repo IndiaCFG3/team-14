@@ -44,12 +44,7 @@ class Migration(migrations.Migration):
             name='QuizSent',
             fields=[
                 ('quiz_id', models.IntegerField(primary_key=True, serialize=False, verbose_name='Quiz Sent ID')),
-<<<<<<< HEAD
-                ('description', models.TextField(verbose_name='Quiz Questions')),
-                ('answer_key', models.TextField(verbose_name='Answer Key')),
-=======
                 ('description', models.TextField(verbose_name='Quiz Description')),
->>>>>>> 4b96d6eaa81a6d5fc60e1f77ed6822ba4ee701bd
                 ('total_marks', models.IntegerField(verbose_name='Total Marks')),
                 ('mobile_number', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='courses.Student', verbose_name='Mobile Number')),
             ],

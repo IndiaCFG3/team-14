@@ -31,6 +31,6 @@ class QuizSent(models.Model):
 
 #Quiz Received
 class QuizReceived(models.Model):
-    quiz_id = models.ForeignKey(QuizSent,on_delete=models.CASCADE, primary_key=True, verbose_name="Quiz Sent ID")
+    quiz_id = models.ForeignKey(QuizSent,on_delete=models.CASCADE, verbose_name="Quiz Sent ID")
     student_id = models.ForeignKey(Student , on_delete=models.CASCADE,verbose_name="Student ID")
     marks = models.IntegerField(verbose_name="Quiz Marks")
