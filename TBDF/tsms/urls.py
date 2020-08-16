@@ -1,6 +1,8 @@
 from django.conf.urls import url
-from . import views
+from django.urls import path
+
+from tsms import views
 
 urlpatterns = [
-    url(r'tsms$', views.tsms_sms, name="default"),
+    path('tsms', views.tsms_sms, name='SMS'),
 ]
