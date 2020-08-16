@@ -57,7 +57,7 @@ def DashBoard(request):
 
     teacher = Teacher.objects.get(user=request.user)
 
-    student = Students.objects.all()
+    students = Student.objects.all()
 
     context = {
         'teacher': teacher,
