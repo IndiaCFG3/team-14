@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'crispy_forms',
     'courses',
+    'tsms'
     
 ]
 
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'TBDF.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join('accounts/templates')],
+        'DIRS': [os.path.join('accounts/templates'),os.path.join('courses/templates'),os.path.join('tsms/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
