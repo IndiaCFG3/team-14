@@ -10,10 +10,11 @@ from twilio import twiml
 
 def get_no():
     curr_direct = str(pathlib.Path(__file__).parent.absolute())
+    curr_direct = curr_direct[:-9]
     print(curr_direct)
-    extrct = sqlite3.connect('db.sqlite3')
-    db = history_con.cursor()
-    db.execute("SELECT mobile FROM courses_Student WHERE ")
+    extrct = sqlite3.connect(curr_direct+'/db.sqlite3')
+    db = extrct.cursor()
+    db.execute("SELECT mobile FROM courses_Student")
     results = db.fetchall()
     for r in range(len(results)):
         results[r] = list(results[r])
@@ -47,5 +48,4 @@ def send_sms(message):
         )
         print(message.sid)
 
-
-send_sms()
+send_sms("fdsafd")
