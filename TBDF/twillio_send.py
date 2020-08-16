@@ -5,6 +5,8 @@ import shutil
 import getpass
 import pathlib
 from twilio.rest import Client
+from twilio import twiml
+
 
 def get_no():
     extrct = sqlite3.connect('db.sqlite3')
@@ -24,14 +26,13 @@ def send_sms():
 
     client = Client(account_sid, auth_token)
 
-    ''' Change the value of 'from' with the number  
-    received from Twilio and the value of 'to' 
-    with the number in which you want to send message.'''
+    #test
     message = client.messages.create(
         from_='+16039414130',
         body='body',
         to='+919714948808'
     )
+
     mobile_no = get_no()
     print(mobile_no)
 
@@ -39,7 +40,7 @@ def send_sms():
         message = client.messages.create(
             from_='+16039414130',
             body='body',
-            to= str(x)
+            to=str(x)
         )
         print(message.sid)
 
