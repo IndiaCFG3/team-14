@@ -62,3 +62,7 @@ def DashBoard(request):
 def chatbot(request):
 
     return HttpResponse("hello")
+
+
+def SendSms(request):
+    return render(request, "send_sms.html")
