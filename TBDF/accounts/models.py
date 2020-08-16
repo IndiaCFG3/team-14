@@ -6,4 +6,5 @@ from django.contrib.auth.models import User
 
 
 class Teacher(models.Model):
-    pass
+    user = models.OneToOneField(Users, on_delete=models.CASCADE, primary_key=True)
+    phoneno=models.BigIntegerField(null=True,blank=True, verbose_name="Mobile Number")
