@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import request
+from django.http import request, HttpResponse
 
 from django.contrib import messages
 
@@ -47,6 +47,8 @@ def QuizSignup(request):
     if request.method == 'POST':
         Quizform = QuizRegisterForm(
             request.POST, request.FILES)
+
+        return HttpResponse('x')
     else:
         quizform = QuizRegisterForm()
         context = {'form': quizform}
