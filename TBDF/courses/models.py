@@ -22,21 +22,6 @@ class StudentMarks(models.Model):
     name = models.TextField(verbose_name="Course Name")
     marks = models.IntegerField(verbose_name="Quiz Marks")
 
-
-#Message Sending
-class MessageSender(models.Model):
-    msg_id = models.IntegerField(verbose_name="Message ID")
-    timestamp = models.DateTimeField(auto_now=True, verbose_name="Sent Time")
-    course_id = models.ForeignKey(Course,verbose_name="Course ID")
-    description = models.TextField(verbose_name="Description")
-
-#Message Receiving
-class MessageReceiver(models.Model):
-    msg_id = models.IntegerField(verbose_name="Message ID")
-    timestamp = models.DateTimeField(auto_now=True, verbose_name="Received Time")
-    mobile_number = models.ForeignKey(Student,verbose_name="Mobile Number")
-    description = models.TextField(verbose_name="Description")
-
 #Quiz Sent
 class QuizSent(models.Model):
     quiz_id = models.IntegerField(verbose_name="Quiz Sent ID")
