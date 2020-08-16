@@ -12,6 +12,8 @@ from courses.models import Student, QuizSent
 from accounts.forms import UserRegisterForm, TeacherRegisterForm
 from courses.forms import QuizRegisterForm
 
+from twillio_send import send_sms
+
 
 
 def home(request):
@@ -51,6 +53,8 @@ def QuizSignup(request):
 
 
         #send_sms() yet to be implemented
+        x = request.POST.get('description')
+        send_sms(x)
         return HttpResponse('Quiz Sent!')
     else:
         quizform = QuizRegisterForm()

@@ -12,7 +12,7 @@ def get_no():
     curr_direct = str(pathlib.Path(__file__).parent.absolute())
     print(curr_direct)
     extrct = sqlite3.connect('db.sqlite3')
-    db = history_con.cursor()
+    db = extrct.cursor()
     db.execute("SELECT mobile FROM courses_Student WHERE ")
     results = db.fetchall()
     for r in range(len(results)):
@@ -46,6 +46,3 @@ def send_sms(message):
             to=str(x)
         )
         print(message.sid)
-
-
-send_sms()
